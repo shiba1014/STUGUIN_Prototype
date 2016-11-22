@@ -14,6 +14,9 @@
 		52411DDC1DE465F400B0AF6E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52411DDA1DE465F400B0AF6E /* LaunchScreen.storyboard */; };
 		52411DE71DE465F500B0AF6E /* STUGUIN_PrototypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52411DE61DE465F500B0AF6E /* STUGUIN_PrototypeTests.swift */; };
 		52411DF21DE465F500B0AF6E /* STUGUIN_PrototypeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52411DF11DE465F500B0AF6E /* STUGUIN_PrototypeUITests.swift */; };
+		52411E001DE4665900B0AF6E /* RoomListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52411DFF1DE4665900B0AF6E /* RoomListViewController.swift */; };
+		52411E031DE4917F00B0AF6E /* StudyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52411E011DE4917F00B0AF6E /* StudyViewController.swift */; };
+		52411E041DE4917F00B0AF6E /* StudyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52411E021DE4917F00B0AF6E /* StudyViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +50,9 @@
 		52411DED1DE465F500B0AF6E /* STUGUIN_PrototypeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = STUGUIN_PrototypeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		52411DF11DE465F500B0AF6E /* STUGUIN_PrototypeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STUGUIN_PrototypeUITests.swift; sourceTree = "<group>"; };
 		52411DF31DE465F500B0AF6E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		52411DFF1DE4665900B0AF6E /* RoomListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomListViewController.swift; sourceTree = "<group>"; };
+		52411E011DE4917F00B0AF6E /* StudyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudyViewController.swift; sourceTree = "<group>"; };
+		52411E021DE4917F00B0AF6E /* StudyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StudyViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +109,9 @@
 				52411DD81DE465F400B0AF6E /* Assets.xcassets */,
 				52411DDA1DE465F400B0AF6E /* LaunchScreen.storyboard */,
 				52411DDD1DE465F400B0AF6E /* Info.plist */,
+				52411DFF1DE4665900B0AF6E /* RoomListViewController.swift */,
+				52411E011DE4917F00B0AF6E /* StudyViewController.swift */,
+				52411E021DE4917F00B0AF6E /* StudyViewController.xib */,
 			);
 			path = STUGUIN_Prototype;
 			sourceTree = "<group>";
@@ -235,6 +244,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52411E041DE4917F00B0AF6E /* StudyViewController.xib in Resources */,
 				52411DDC1DE465F400B0AF6E /* LaunchScreen.storyboard in Resources */,
 				52411DD91DE465F400B0AF6E /* Assets.xcassets in Resources */,
 				52411DD71DE465F400B0AF6E /* Main.storyboard in Resources */,
@@ -262,6 +272,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52411E031DE4917F00B0AF6E /* StudyViewController.swift in Sources */,
+				52411E001DE4665900B0AF6E /* RoomListViewController.swift in Sources */,
 				52411DD41DE465F400B0AF6E /* ViewController.swift in Sources */,
 				52411DD21DE465F400B0AF6E /* AppDelegate.swift in Sources */,
 			);
