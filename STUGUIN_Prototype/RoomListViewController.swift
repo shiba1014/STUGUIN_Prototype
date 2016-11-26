@@ -60,9 +60,10 @@ class RoomListViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         
         let roomInfo: Dictionary = roomArray[indexPath.row]
-        let username:String = roomInfo["hostUser"] as! String
+        let username: String = roomInfo["hostUser"] as! String
+        let targetMinutes: Int = roomInfo["targetMinutes"] as! Int
         
-        cell.textLabel?.text = "Room\(indexPath.row + 1) -> \(username)"
+        cell.textLabel?.text = "Room\(indexPath.row + 1) -> \(username) \(targetMinutes) min"
         
         return cell
     }
@@ -75,8 +76,8 @@ class RoomListViewController: UITableViewController {
         
         tableView.deselectRow(at: indexPath, animated: true)
         
-        let roomInfo: Dictionary = roomArray[indexPath.row]
-        let username:String = roomInfo["hostUser"] as! String
+        var roomInfo: Dictionary = roomArray[indexPath.row]
+        let username: String = roomInfo["hostUser"] as! String
         let targetMinutes:Int = roomInfo["targetMinutes"] as! Int
         
         let alert = UIAlertController(title: nil, message: "\(username)さんと\(targetMinutes)分の勉強を始めますか？", preferredStyle: .alert)
@@ -88,11 +89,47 @@ class RoomListViewController: UITableViewController {
             studyVC.roomInfo = roomInfo
             self.present(studyVC, animated: true, completion: nil)
             
+            roomInfo["status"] = "full"
+            self.roomArray[indexPath.row] = roomInfo
         })
         let cancelAction = UIAlertAction(title: "いいえ", style: .cancel, handler: nil)
         alert.addAction(okAction)
         alert.addAction(cancelAction)
         self.present(alert, animated: true, completion: nil)
+    }
+    
+    @IBAction func pushedPlus() {
+        let alert:UIAlertController = UIAlertController(title:nil,
+                                                        message: "新しいルームを作ります",
+                                                        preferredStyle: .alert)
+        
+        let cancelAction:UIAlertAction = UIAlertAction(title: "Cancel",
+                                                       style: .cancel,
+                                                       handler:nil)
+        let defaultAction:UIAlertAction = UIAlertAction(title: "OK",
+                                                        style: .default,
+                                                        handler:{
+                                                            (action:UIAlertAction!) -> Void in
+                                                            print("OK")
+                                                            let textFields:Array<UITextField>? =  alert.textFields as Array<UITextField>?
+                                                            if textFields != nil {
+                                                                let textField = textFields?[0]
+                                                                var roomInfo: Dictionary<String, Any> = [:]
+                                                                roomInfo["hostUser"] = "shiba"
+                                                                roomInfo["targetMinutes"] = Int((textField?.text)!)
+                                                                roomInfo["status"] = "empty"
+                                                                self.roomArray.append(roomInfo)
+                                                                self.tableView.reloadData()
+                                                            }
+        })
+        alert.addAction(cancelAction)
+        alert.addAction(defaultAction)
+        
+        alert.addTextField(configurationHandler: {(text:UITextField!) -> Void in
+            text.placeholder = "設定時間（分）"
+            text.keyboardType = .numberPad
+        })
+        present(alert, animated: true, completion: nil)
     }
     
     /*

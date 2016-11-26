@@ -47,7 +47,10 @@ class StudyViewController: UIViewController {
         let hour = time / 60 / 60
         timeLabel.text = String(format: "%02d:%02d:%02d", hour,minute,second)
         if(time == 0){
-            pushedFinish()
+            let finishVC = FinishViewController()
+            finishVC.roomInfo = roomInfo
+            self.present(finishVC, animated: true, completion: nil)
+
         }
     }
 
@@ -55,18 +58,6 @@ class StudyViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    @IBAction func pushedFinish() {
-        if(time != 0){
-            let alert = UIAlertController(title: nil, message: "まだ目標時間に達成していません", preferredStyle: .alert)
-            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-            alert.addAction(okAction)
-            self.present(alert, animated: true, completion: nil)
-            return
-        }
-        self.dismiss(animated: true, completion: nil)
-    }
-    
 
     /*
     // MARK: - Navigation

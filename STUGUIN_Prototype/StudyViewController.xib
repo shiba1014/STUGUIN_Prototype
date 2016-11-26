@@ -26,14 +26,6 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xbO-lf-Qzu">
-                    <rect key="frame" x="154.5" y="403" width="66" height="42"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                    <state key="normal" title="Finish"/>
-                    <connections>
-                        <action selector="pushedFinish" destination="-1" eventType="touchUpInside" id="f6j-pd-hfE"/>
-                    </connections>
-                </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="063-Q9-EEh">
                     <rect key="frame" x="119" y="314.5" width="136" height="38.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="32"/>
@@ -45,6 +37,7 @@
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5Tf-PI-k2h">
                             <rect key="frame" x="47" y="56" width="94" height="94"/>
+                            <color key="backgroundColor" red="0.66914382279999995" green="1" blue="0.95139621730000001" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="5Tf-PI-k2h" secondAttribute="height" multiplier="1:1" id="jPw-sM-Rpl"/>
                             </constraints>
@@ -76,6 +69,7 @@
                         </label>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7Cf-qq-iif">
                             <rect key="frame" x="47" y="57" width="93.5" height="93.5"/>
+                            <color key="backgroundColor" red="0.66914382279409157" green="1" blue="0.9513962173369972" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="7Cf-qq-iif" secondAttribute="height" multiplier="1:1" id="HYg-Ee-arD"/>
                             </constraints>
@@ -95,9 +89,7 @@
             <constraints>
                 <constraint firstItem="CwO-hs-O9T" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="6Cc-LG-H9H"/>
                 <constraint firstItem="CwO-hs-O9T" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="100" id="BzX-eU-ruV"/>
-                <constraint firstItem="xbO-lf-Qzu" firstAttribute="top" secondItem="063-Q9-EEh" secondAttribute="bottom" constant="50" id="O6q-oo-G0a"/>
                 <constraint firstItem="063-Q9-EEh" firstAttribute="top" secondItem="7y3-RE-4vL" secondAttribute="bottom" constant="8" id="P0q-Dj-ai8"/>
-                <constraint firstItem="xbO-lf-Qzu" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="PPK-t4-5aX"/>
                 <constraint firstItem="063-Q9-EEh" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="QGH-7a-Ut2"/>
                 <constraint firstItem="7y3-RE-4vL" firstAttribute="top" secondItem="CwO-hs-O9T" secondAttribute="top" id="SAs-Qy-U6y"/>
                 <constraint firstItem="7y3-RE-4vL" firstAttribute="leading" secondItem="CwO-hs-O9T" secondAttribute="trailing" id="TdH-f6-pP9"/>
