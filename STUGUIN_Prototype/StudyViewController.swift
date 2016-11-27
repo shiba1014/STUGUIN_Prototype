@@ -38,6 +38,11 @@ class StudyViewController: UIViewController {
                              selector: #selector(countUp),
                              userInfo: nil,
                              repeats: true)
+        
+        let deviceStatus = DeviceLockStatus()
+        deviceStatus.registerAppForDetectLockState()
+        
+        
     }
     
     func countUp() {
@@ -50,7 +55,6 @@ class StudyViewController: UIViewController {
             let finishVC = FinishViewController()
             finishVC.roomInfo = roomInfo
             self.present(finishVC, animated: true, completion: nil)
-
         }
     }
 

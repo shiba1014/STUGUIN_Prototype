@@ -19,6 +19,8 @@
 		52411E001DE4665900B0AF6E /* RoomListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52411DFF1DE4665900B0AF6E /* RoomListViewController.swift */; };
 		52411E031DE4917F00B0AF6E /* StudyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52411E011DE4917F00B0AF6E /* StudyViewController.swift */; };
 		52411E041DE4917F00B0AF6E /* StudyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52411E021DE4917F00B0AF6E /* StudyViewController.xib */; };
+		529B1B681DE9D103009119BF /* DeviceLockStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 529B1B671DE9D103009119BF /* DeviceLockStatus.m */; };
+		529B1B6A1DEB04C5009119BF /* DeviceStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529B1B691DEB04C5009119BF /* DeviceStatus.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,10 @@
 		52411DFF1DE4665900B0AF6E /* RoomListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomListViewController.swift; sourceTree = "<group>"; };
 		52411E011DE4917F00B0AF6E /* StudyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudyViewController.swift; sourceTree = "<group>"; };
 		52411E021DE4917F00B0AF6E /* StudyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StudyViewController.xib; sourceTree = "<group>"; };
+		529B1B651DE9D103009119BF /* STUGUIN_Prototype-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "STUGUIN_Prototype-Bridging-Header.h"; sourceTree = "<group>"; };
+		529B1B661DE9D103009119BF /* DeviceLockStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceLockStatus.h; sourceTree = "<group>"; };
+		529B1B671DE9D103009119BF /* DeviceLockStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceLockStatus.m; sourceTree = "<group>"; };
+		529B1B691DEB04C5009119BF /* DeviceStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceStatus.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +124,10 @@
 				52411E021DE4917F00B0AF6E /* StudyViewController.xib */,
 				523E882C1DE6BAF600F4E3AC /* FinishViewController.swift */,
 				523E882D1DE6BAF600F4E3AC /* FinishViewController.xib */,
+				529B1B661DE9D103009119BF /* DeviceLockStatus.h */,
+				529B1B671DE9D103009119BF /* DeviceLockStatus.m */,
+				529B1B651DE9D103009119BF /* STUGUIN_Prototype-Bridging-Header.h */,
+				529B1B691DEB04C5009119BF /* DeviceStatus.swift */,
 			);
 			path = STUGUIN_Prototype;
 			sourceTree = "<group>";
@@ -209,6 +219,7 @@
 					52411DCD1DE465F400B0AF6E = {
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = U6JP7S27NV;
+						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 					};
 					52411DE11DE465F500B0AF6E = {
@@ -281,6 +292,8 @@
 			files = (
 				523E882E1DE6BAF600F4E3AC /* FinishViewController.swift in Sources */,
 				52411E031DE4917F00B0AF6E /* StudyViewController.swift in Sources */,
+				529B1B6A1DEB04C5009119BF /* DeviceStatus.swift in Sources */,
+				529B1B681DE9D103009119BF /* DeviceLockStatus.m in Sources */,
 				52411E001DE4665900B0AF6E /* RoomListViewController.swift in Sources */,
 				52411DD41DE465F400B0AF6E /* ViewController.swift in Sources */,
 				52411DD21DE465F400B0AF6E /* AppDelegate.swift in Sources */,
@@ -435,11 +448,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = U6JP7S27NV;
 				INFOPLIST_FILE = STUGUIN_Prototype/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.shiba.STUGUIN-Prototype";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "STUGUIN_Prototype/STUGUIN_Prototype-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -448,11 +464,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = U6JP7S27NV;
 				INFOPLIST_FILE = STUGUIN_Prototype/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.shiba.STUGUIN-Prototype";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "STUGUIN_Prototype/STUGUIN_Prototype-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

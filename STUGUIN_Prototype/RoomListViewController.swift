@@ -27,11 +27,11 @@ class RoomListViewController: UITableViewController {
         
         let room2: Dictionary<String, Any> = ["hostUser" : "Sho Sakurai",
                                               "targetMinutes" : 60,
-                                              "status" : "empty"]
+                                              "status" : "full"]
         
         let room3: Dictionary<String, Any> = ["hostUser" : "Go Ayano",
                                               "targetMinutes" : 60,
-                                              "status" : "full"]
+                                              "status" : "empty"]
         
         roomArray.append(room1)
         roomArray.append(room2)
@@ -62,8 +62,14 @@ class RoomListViewController: UITableViewController {
         let roomInfo: Dictionary = roomArray[indexPath.row]
         let username: String = roomInfo["hostUser"] as! String
         let targetMinutes: Int = roomInfo["targetMinutes"] as! Int
+        let status: String = roomInfo["status"] as! String
         
         cell.textLabel?.text = "Room\(indexPath.row + 1) -> \(username) \(targetMinutes) min"
+        
+        if(status == "full"){
+            cell.backgroundColor = UIColor.red
+            cell.textLabel?.textColor = UIColor.white
+        }
         
         return cell
     }
@@ -79,6 +85,14 @@ class RoomListViewController: UITableViewController {
         var roomInfo: Dictionary = roomArray[indexPath.row]
         let username: String = roomInfo["hostUser"] as! String
         let targetMinutes:Int = roomInfo["targetMinutes"] as! Int
+        let status: String = roomInfo["status"] as! String
+        
+        if(status == "full"){
+            let alert = UIAlertController(title: nil, message: "このルームは埋まっています", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+            alert.addAction(okAction)
+            self.present(alert, animated: true, completion: nil)
+        }
         
         let alert = UIAlertController(title: nil, message: "\(username)さんと\(targetMinutes)分の勉強を始めますか？", preferredStyle: .alert)
         let okAction = UIAlertAction(title: "はい", style: .default, handler: {
