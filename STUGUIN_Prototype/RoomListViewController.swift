@@ -11,6 +11,8 @@ import UIKit
 class RoomListViewController: UITableViewController {
     
     var roomArray: [Dictionary<String, Any>] = []
+    let waitingView: UIView = UIView()
+    var username: String = "shiba"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -105,6 +107,8 @@ class RoomListViewController: UITableViewController {
             
             roomInfo["status"] = "full"
             self.roomArray[indexPath.row] = roomInfo
+            
+            
         })
         let cancelAction = UIAlertAction(title: "いいえ", style: .cancel, handler: nil)
         alert.addAction(okAction)
@@ -120,7 +124,7 @@ class RoomListViewController: UITableViewController {
         let cancelAction:UIAlertAction = UIAlertAction(title: "Cancel",
                                                        style: .cancel,
                                                        handler:nil)
-        let defaultAction:UIAlertAction = UIAlertAction(title: "OK",
+        let okAction:UIAlertAction = UIAlertAction(title: "OK",
                                                         style: .default,
                                                         handler:{
                                                             (action:UIAlertAction!) -> Void in
@@ -129,15 +133,16 @@ class RoomListViewController: UITableViewController {
                                                             if textFields != nil {
                                                                 let textField = textFields?[0]
                                                                 var roomInfo: Dictionary<String, Any> = [:]
-                                                                roomInfo["hostUser"] = "shiba"
+                                                                roomInfo["hostUser"] = self.username
                                                                 roomInfo["targetMinutes"] = Int((textField?.text)!)
                                                                 roomInfo["status"] = "empty"
                                                                 self.roomArray.append(roomInfo)
                                                                 self.tableView.reloadData()
+                                                                self.createWaitingView()
                                                             }
         })
         alert.addAction(cancelAction)
-        alert.addAction(defaultAction)
+        alert.addAction(okAction)
         
         alert.addTextField(configurationHandler: {(text:UITextField!) -> Void in
             text.placeholder = "設定時間（分）"
@@ -146,6 +151,73 @@ class RoomListViewController: UITableViewController {
         present(alert, animated: true, completion: nil)
     }
     
+    func createWaitingView() {
+        waitingView.frame = CGRect(x: 0, y: 0, width: self.view.bounds.size.width, height: self.view.bounds.size.height)
+        waitingView.backgroundColor = UIColor.orange
+//        view.translatesAutoresizingMaskIntoConstraints = false
+        self.navigationController?.view.addSubview(waitingView)
+        let statusLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 100, height: 30))
+        statusLabel.text = "Waiting..."
+        statusLabel.textColor = UIColor.white
+        statusLabel.center = waitingView.center
+//        statusLabel.translatesAutoresizingMaskIntoConstraints = true
+//        statusLabel.addConstraints([NSLayoutConstraint(item: statusLabel,
+//                                                      attribute: .centerX,
+//                                                      relatedBy: .equal,
+//                                                      toItem: view,
+//                                                      attribute: .centerX,
+//                                                      multiplier: 1.0,
+//                                                      constant: 0.0),
+//                                   
+//                                   NSLayoutConstraint(item: statusLabel,
+//                                                      attribute: .centerY,
+//                                                      relatedBy: .equal,
+//                                                      toItem: view,
+//                                                      attribute: .centerY,
+//                                                      multiplier: 1.0,
+//                                                      constant: 0.0)]
+//        )
+        
+        waitingView.addSubview(statusLabel)
+        
+        let cancelButton = UIButton(frame: CGRect(x: 0, y: 0, width: 150, height: 40))
+        cancelButton.setTitle("Delete Room", for: .normal)
+        cancelButton.center = CGPoint(x: waitingView.center.x, y: waitingView.center.y + 50)
+        cancelButton.addTarget(self, action: #selector(RoomListViewController.deleteView), for: .touchUpInside)
+//        cancelButton.translatesAutoresizingMaskIntoConstraints = true
+//        cancelButton.addConstraints([
+//            NSLayoutConstraint(item: cancelButton,
+//                               attribute: .top,
+//                               relatedBy: .equal,
+//                               toItem: statusLabel,
+//                               attribute: .bottom,
+//                               multiplier: 1.0,
+//                               constant: 8.0),
+//            
+//            NSLayoutConstraint(item: cancelButton,
+//                               attribute: .centerX,
+//                               relatedBy: .equal,
+//                               toItem: statusLabel,
+//                               attribute: .centerX,
+//                               multiplier: 1.0,
+//                               constant: 0.0)
+//            ])
+        waitingView.addSubview(cancelButton)
+        
+    }
+    
+    func deleteView() {
+        waitingView.removeFromSuperview()
+        for i in 0..<roomArray.count {
+            let roomInfo = roomArray[i]
+            let hostUser: String = roomInfo["hostUser"] as! String
+            if(hostUser == username){
+                roomArray.remove(at: i)
+                self.tableView.reloadData()
+                break
+            }
+        }
+    }
     /*
      // Override to support conditional editing of the table view.
      override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

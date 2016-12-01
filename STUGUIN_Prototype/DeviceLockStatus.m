@@ -22,7 +22,6 @@
         
         if(state == 0) {
             [object unlocked];
-            
         } else {
             [object locked];
         }

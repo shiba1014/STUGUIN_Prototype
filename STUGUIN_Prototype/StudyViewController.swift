@@ -41,8 +41,6 @@ class StudyViewController: UIViewController {
         
         let deviceStatus = DeviceLockStatus()
         deviceStatus.registerAppForDetectLockState()
-        
-        
     }
     
     func countUp() {
