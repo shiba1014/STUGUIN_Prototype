@@ -16,14 +16,27 @@ class StudyViewController: UIViewController {
     @IBOutlet var friendImageView: UIImageView!
     @IBOutlet var timeLabel: UILabel!
     var time: Int = 0
+    var username: String = "shiba"
+    var isStudying:Bool = false
+    var isLocked: Bool = false
     
     public var roomInfo: Dictionary<String, Any> = [:]
+    
+    class var sharedInstance: StudyViewController {
+        struct Singleton {
+            static let instance: StudyViewController = StudyViewController()
+        }
+        return Singleton.instance
+    }
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        isStudying = true
         
+        usernameLabel.text = username
         friendNameLabel.text = roomInfo["hostUser"] as? String
         
         let targetMinutes:Int = roomInfo["targetMinutes"] as! Int
@@ -41,8 +54,10 @@ class StudyViewController: UIViewController {
         
         let deviceStatus = DeviceLockStatus()
         deviceStatus.registerAppForDetectLockState()
+        
+        DeviceStatus.sharedInstance.addObserver(self, forKeyPath: "isLocked", options: .new, context: nil)
     }
-    
+
     func countUp() {
         time -= 1
         let second = time % 60
@@ -50,9 +65,28 @@ class StudyViewController: UIViewController {
         let hour = time / 60 / 60
         timeLabel.text = String(format: "%02d:%02d:%02d", hour,minute,second)
         if(time == 0){
-            let finishVC = FinishViewController()
-            finishVC.roomInfo = roomInfo
-            self.present(finishVC, animated: true, completion: nil)
+            finish()
+        }
+    }
+    
+    public func finish() {
+        isStudying = false
+        let finishVC = FinishViewController()
+        finishVC.roomInfo = roomInfo
+        let studyTime: Int = (roomInfo["targetMinutes"] as? Int)!
+        finishVC.studyTime = studyTime * 60 - time
+        if time == 0 {
+            finishVC.isSuccess = true
+        } else {
+            finishVC.isSuccess = false
+        }
+        self.present(finishVC, animated: true, completion: nil)
+    }
+    
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        if(keyPath == "isLocked"){
+            isLocked = DeviceStatus.sharedInstance.isLocked
+            print("isLocked == \(isLocked)")
         }
     }
 

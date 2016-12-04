@@ -24,7 +24,7 @@ class RoomListViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
         let room1: Dictionary<String, Any> = ["hostUser" : "Fumi Nikaido",
-                                              "targetMinutes" : 30,
+                                              "targetMinutes" : 1,
                                               "status" : "empty"]
         
         let room2: Dictionary<String, Any> = ["hostUser" : "Sho Sakurai",
@@ -101,7 +101,7 @@ class RoomListViewController: UITableViewController {
             (action:UIAlertAction!) -> Void in
             print("OK")
             
-            let studyVC = StudyViewController()
+            let studyVC = StudyViewController.sharedInstance
             studyVC.roomInfo = roomInfo
             self.present(studyVC, animated: true, completion: nil)
             

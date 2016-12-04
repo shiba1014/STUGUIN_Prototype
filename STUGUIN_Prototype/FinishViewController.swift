@@ -15,16 +15,29 @@ class FinishViewController: UIViewController {
     @IBOutlet var userImageView: UIImageView!
     @IBOutlet var friendImageView: UIImageView!
     @IBOutlet var timeLabel: UILabel!
+    @IBOutlet var resultLabel: UILabel!
     
+    public var studyTime: Int = 0
+    public var isSuccess: Bool = true
     public var roomInfo: Dictionary<String, Any> = [:]
+    var username: String = "shiba"
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         friendNameLabel.text = roomInfo["hostUser"] as? String
-        let time: Int = (roomInfo["targetMinutes"] as? Int)!
-        timeLabel.text = "\(time) min"
+        usernameLabel.text = username
+        let second = studyTime % 60
+        let minute = (studyTime / 60) % 60
+        let hour = studyTime / 60 / 60
+        timeLabel.text = String(format: "%02d:%02d:%02d", hour,minute,second)
+        
+        if isSuccess {
+            resultLabel.text = "Congratulation!"
+        } else {
+            resultLabel.text = "Failed..."
+        }
     }
 
     override func didReceiveMemoryWarning() {

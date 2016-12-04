@@ -18,7 +18,7 @@
         uint64_t state = UINT64_MAX;
         notify_get_state(token, &state);
         
-        DeviceStatus *object = [DeviceStatus new];  //DeviceStatus is .swift file
+        DeviceStatus *object = [DeviceStatus sharedInstance];  //DeviceStatus is .swift file
         
         if(state == 0) {
             [object unlocked];

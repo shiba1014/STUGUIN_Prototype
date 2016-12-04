@@ -10,7 +10,6 @@
 		523E882E1DE6BAF600F4E3AC /* FinishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523E882C1DE6BAF600F4E3AC /* FinishViewController.swift */; };
 		523E882F1DE6BAF600F4E3AC /* FinishViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 523E882D1DE6BAF600F4E3AC /* FinishViewController.xib */; };
 		52411DD21DE465F400B0AF6E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52411DD11DE465F400B0AF6E /* AppDelegate.swift */; };
-		52411DD41DE465F400B0AF6E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52411DD31DE465F400B0AF6E /* ViewController.swift */; };
 		52411DD71DE465F400B0AF6E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52411DD51DE465F400B0AF6E /* Main.storyboard */; };
 		52411DD91DE465F400B0AF6E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52411DD81DE465F400B0AF6E /* Assets.xcassets */; };
 		52411DDC1DE465F400B0AF6E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52411DDA1DE465F400B0AF6E /* LaunchScreen.storyboard */; };
@@ -19,6 +18,8 @@
 		52411E001DE4665900B0AF6E /* RoomListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52411DFF1DE4665900B0AF6E /* RoomListViewController.swift */; };
 		52411E031DE4917F00B0AF6E /* StudyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52411E011DE4917F00B0AF6E /* StudyViewController.swift */; };
 		52411E041DE4917F00B0AF6E /* StudyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52411E021DE4917F00B0AF6E /* StudyViewController.xib */; };
+		525331861DF43F0500614FFF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525331841DF43F0500614FFF /* LoginViewController.swift */; };
+		525331871DF43F0500614FFF /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 525331851DF43F0500614FFF /* LoginViewController.xib */; };
 		529B1B681DE9D103009119BF /* DeviceLockStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 529B1B671DE9D103009119BF /* DeviceLockStatus.m */; };
 		529B1B6A1DEB04C5009119BF /* DeviceStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529B1B691DEB04C5009119BF /* DeviceStatus.swift */; };
 /* End PBXBuildFile section */
@@ -45,7 +46,6 @@
 		523E882D1DE6BAF600F4E3AC /* FinishViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FinishViewController.xib; sourceTree = "<group>"; };
 		52411DCE1DE465F400B0AF6E /* STUGUIN_Prototype.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = STUGUIN_Prototype.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52411DD11DE465F400B0AF6E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		52411DD31DE465F400B0AF6E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		52411DD61DE465F400B0AF6E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		52411DD81DE465F400B0AF6E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		52411DDB1DE465F400B0AF6E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -59,6 +59,8 @@
 		52411DFF1DE4665900B0AF6E /* RoomListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomListViewController.swift; sourceTree = "<group>"; };
 		52411E011DE4917F00B0AF6E /* StudyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudyViewController.swift; sourceTree = "<group>"; };
 		52411E021DE4917F00B0AF6E /* StudyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StudyViewController.xib; sourceTree = "<group>"; };
+		525331841DF43F0500614FFF /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = ../LoginViewController.swift; sourceTree = "<group>"; };
+		525331851DF43F0500614FFF /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LoginViewController.xib; path = ../LoginViewController.xib; sourceTree = "<group>"; };
 		529B1B651DE9D103009119BF /* STUGUIN_Prototype-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "STUGUIN_Prototype-Bridging-Header.h"; sourceTree = "<group>"; };
 		529B1B661DE9D103009119BF /* DeviceLockStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceLockStatus.h; sourceTree = "<group>"; };
 		529B1B671DE9D103009119BF /* DeviceLockStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceLockStatus.m; sourceTree = "<group>"; };
@@ -114,7 +116,6 @@
 			isa = PBXGroup;
 			children = (
 				52411DD11DE465F400B0AF6E /* AppDelegate.swift */,
-				52411DD31DE465F400B0AF6E /* ViewController.swift */,
 				52411DD51DE465F400B0AF6E /* Main.storyboard */,
 				52411DD81DE465F400B0AF6E /* Assets.xcassets */,
 				52411DDA1DE465F400B0AF6E /* LaunchScreen.storyboard */,
@@ -124,6 +125,8 @@
 				52411E021DE4917F00B0AF6E /* StudyViewController.xib */,
 				523E882C1DE6BAF600F4E3AC /* FinishViewController.swift */,
 				523E882D1DE6BAF600F4E3AC /* FinishViewController.xib */,
+				525331841DF43F0500614FFF /* LoginViewController.swift */,
+				525331851DF43F0500614FFF /* LoginViewController.xib */,
 				529B1B661DE9D103009119BF /* DeviceLockStatus.h */,
 				529B1B671DE9D103009119BF /* DeviceLockStatus.m */,
 				529B1B651DE9D103009119BF /* STUGUIN_Prototype-Bridging-Header.h */,
@@ -263,6 +266,7 @@
 			files = (
 				52411E041DE4917F00B0AF6E /* StudyViewController.xib in Resources */,
 				523E882F1DE6BAF600F4E3AC /* FinishViewController.xib in Resources */,
+				525331871DF43F0500614FFF /* LoginViewController.xib in Resources */,
 				52411DDC1DE465F400B0AF6E /* LaunchScreen.storyboard in Resources */,
 				52411DD91DE465F400B0AF6E /* Assets.xcassets in Resources */,
 				52411DD71DE465F400B0AF6E /* Main.storyboard in Resources */,
@@ -290,12 +294,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				525331861DF43F0500614FFF /* LoginViewController.swift in Sources */,
 				523E882E1DE6BAF600F4E3AC /* FinishViewController.swift in Sources */,
 				52411E031DE4917F00B0AF6E /* StudyViewController.swift in Sources */,
 				529B1B6A1DEB04C5009119BF /* DeviceStatus.swift in Sources */,
 				529B1B681DE9D103009119BF /* DeviceLockStatus.m in Sources */,
 				52411E001DE4665900B0AF6E /* RoomListViewController.swift in Sources */,
-				52411DD41DE465F400B0AF6E /* ViewController.swift in Sources */,
 				52411DD21DE465F400B0AF6E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
