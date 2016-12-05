@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		123B642B1B206DA124414117 /* Pods_STUGUIN_PrototypeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 953C142B3A4DD407297A26E2 /* Pods_STUGUIN_PrototypeTests.framework */; };
+		1C06381C021088D8DA8556E1 /* Pods_STUGUIN_PrototypeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EF3CB52E7140E0F67C87E17 /* Pods_STUGUIN_PrototypeUITests.framework */; };
+		257C116A1F19614803552EF1 /* Pods_STUGUIN_Prototype.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E19D57310409BE987ED643D5 /* Pods_STUGUIN_Prototype.framework */; };
 		523E882E1DE6BAF600F4E3AC /* FinishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523E882C1DE6BAF600F4E3AC /* FinishViewController.swift */; };
 		523E882F1DE6BAF600F4E3AC /* FinishViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 523E882D1DE6BAF600F4E3AC /* FinishViewController.xib */; };
 		52411DD21DE465F400B0AF6E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52411DD11DE465F400B0AF6E /* AppDelegate.swift */; };
@@ -20,6 +23,23 @@
 		52411E041DE4917F00B0AF6E /* StudyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52411E021DE4917F00B0AF6E /* StudyViewController.xib */; };
 		525331861DF43F0500614FFF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525331841DF43F0500614FFF /* LoginViewController.swift */; };
 		525331871DF43F0500614FFF /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 525331851DF43F0500614FFF /* LoginViewController.xib */; };
+		5253318B1DF4449500614FFF /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5253318A1DF4449500614FFF /* AudioToolbox.framework */; };
+		5253318D1DF4449B00614FFF /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5253318C1DF4449B00614FFF /* CFNetwork.framework */; };
+		5253318F1DF444A500614FFF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5253318E1DF444A500614FFF /* CoreGraphics.framework */; };
+		525331911DF444A900614FFF /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 525331901DF444A900614FFF /* CoreLocation.framework */; };
+		525331931DF444AF00614FFF /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 525331921DF444AF00614FFF /* QuartzCore.framework */; };
+		525331951DF444B800614FFF /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 525331941DF444B800614FFF /* Security.framework */; };
+		525331971DF444BF00614FFF /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 525331961DF444BF00614FFF /* StoreKit.framework */; };
+		525331991DF444C500614FFF /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 525331981DF444C500614FFF /* SystemConfiguration.framework */; };
+		5253319B1DF444CC00614FFF /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 5253319A1DF444CC00614FFF /* libz.tbd */; };
+		5253319D1DF444D400614FFF /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 5253319C1DF444D400614FFF /* libsqlite3.tbd */; };
+		525331A41DF4451600614FFF /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5253319E1DF4451600614FFF /* Bolts.framework */; };
+		525331A51DF4451600614FFF /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5253319F1DF4451600614FFF /* Parse.framework */; };
+		525331A61DF4451600614FFF /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 525331A01DF4451600614FFF /* ParseFacebookUtils.framework */; };
+		525331A71DF4451600614FFF /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 525331A11DF4451600614FFF /* ParseFacebookUtilsV4.framework */; };
+		525331A81DF4451600614FFF /* ParseTwitterUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 525331A21DF4451600614FFF /* ParseTwitterUtils.framework */; };
+		525331A91DF4451600614FFF /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 525331A31DF4451600614FFF /* ParseUI.framework */; };
+		525331AB1DF4454100614FFF /* parse-library-1.12.0 in Resources */ = {isa = PBXBuildFile; fileRef = 525331AA1DF4454100614FFF /* parse-library-1.12.0 */; };
 		529B1B681DE9D103009119BF /* DeviceLockStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 529B1B671DE9D103009119BF /* DeviceLockStatus.m */; };
 		529B1B6A1DEB04C5009119BF /* DeviceStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529B1B691DEB04C5009119BF /* DeviceStatus.swift */; };
 /* End PBXBuildFile section */
@@ -42,6 +62,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D58A64CDC15F1BCECE62D58 /* Pods-STUGUIN_PrototypeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-STUGUIN_PrototypeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-STUGUIN_PrototypeTests/Pods-STUGUIN_PrototypeTests.release.xcconfig"; sourceTree = "<group>"; };
+		2EF3CB52E7140E0F67C87E17 /* Pods_STUGUIN_PrototypeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_STUGUIN_PrototypeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		523E882C1DE6BAF600F4E3AC /* FinishViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinishViewController.swift; sourceTree = "<group>"; };
 		523E882D1DE6BAF600F4E3AC /* FinishViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FinishViewController.xib; sourceTree = "<group>"; };
 		52411DCE1DE465F400B0AF6E /* STUGUIN_Prototype.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = STUGUIN_Prototype.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -61,10 +83,34 @@
 		52411E021DE4917F00B0AF6E /* StudyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StudyViewController.xib; sourceTree = "<group>"; };
 		525331841DF43F0500614FFF /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = ../LoginViewController.swift; sourceTree = "<group>"; };
 		525331851DF43F0500614FFF /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LoginViewController.xib; path = ../LoginViewController.xib; sourceTree = "<group>"; };
+		5253318A1DF4449500614FFF /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		5253318C1DF4449B00614FFF /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		5253318E1DF444A500614FFF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		525331901DF444A900614FFF /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		525331921DF444AF00614FFF /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		525331941DF444B800614FFF /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		525331961DF444BF00614FFF /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		525331981DF444C500614FFF /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		5253319A1DF444CC00614FFF /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		5253319C1DF444D400614FFF /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		5253319E1DF4451600614FFF /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "parse-library-1.12.0/Bolts.framework"; sourceTree = "<group>"; };
+		5253319F1DF4451600614FFF /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = "parse-library-1.12.0/Parse.framework"; sourceTree = "<group>"; };
+		525331A01DF4451600614FFF /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseFacebookUtils.framework; path = "parse-library-1.12.0/ParseFacebookUtils.framework"; sourceTree = "<group>"; };
+		525331A11DF4451600614FFF /* ParseFacebookUtilsV4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseFacebookUtilsV4.framework; path = "parse-library-1.12.0/ParseFacebookUtilsV4.framework"; sourceTree = "<group>"; };
+		525331A21DF4451600614FFF /* ParseTwitterUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseTwitterUtils.framework; path = "parse-library-1.12.0/ParseTwitterUtils.framework"; sourceTree = "<group>"; };
+		525331A31DF4451600614FFF /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseUI.framework; path = "parse-library-1.12.0/ParseUI.framework"; sourceTree = "<group>"; };
+		525331AA1DF4454100614FFF /* parse-library-1.12.0 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "parse-library-1.12.0"; sourceTree = "<group>"; };
 		529B1B651DE9D103009119BF /* STUGUIN_Prototype-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "STUGUIN_Prototype-Bridging-Header.h"; sourceTree = "<group>"; };
 		529B1B661DE9D103009119BF /* DeviceLockStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceLockStatus.h; sourceTree = "<group>"; };
 		529B1B671DE9D103009119BF /* DeviceLockStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceLockStatus.m; sourceTree = "<group>"; };
 		529B1B691DEB04C5009119BF /* DeviceStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceStatus.swift; sourceTree = "<group>"; };
+		953C142B3A4DD407297A26E2 /* Pods_STUGUIN_PrototypeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_STUGUIN_PrototypeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1BB7B0C2A3A6A2F1F79D70C /* Pods-STUGUIN_PrototypeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-STUGUIN_PrototypeUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-STUGUIN_PrototypeUITests/Pods-STUGUIN_PrototypeUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		A83326E049BF590CF116226C /* Pods-STUGUIN_PrototypeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-STUGUIN_PrototypeUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-STUGUIN_PrototypeUITests/Pods-STUGUIN_PrototypeUITests.release.xcconfig"; sourceTree = "<group>"; };
+		B64AD4E289DB54589A0A39E9 /* Pods-STUGUIN_PrototypeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-STUGUIN_PrototypeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-STUGUIN_PrototypeTests/Pods-STUGUIN_PrototypeTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D6DED25EBE731A1D583B555E /* Pods-STUGUIN_Prototype.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-STUGUIN_Prototype.debug.xcconfig"; path = "Pods/Target Support Files/Pods-STUGUIN_Prototype/Pods-STUGUIN_Prototype.debug.xcconfig"; sourceTree = "<group>"; };
+		E19D57310409BE987ED643D5 /* Pods_STUGUIN_Prototype.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_STUGUIN_Prototype.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA27B262264498534D8603B7 /* Pods-STUGUIN_Prototype.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-STUGUIN_Prototype.release.xcconfig"; path = "Pods/Target Support Files/Pods-STUGUIN_Prototype/Pods-STUGUIN_Prototype.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +118,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				525331A61DF4451600614FFF /* ParseFacebookUtils.framework in Frameworks */,
+				5253319D1DF444D400614FFF /* libsqlite3.tbd in Frameworks */,
+				5253319B1DF444CC00614FFF /* libz.tbd in Frameworks */,
+				525331991DF444C500614FFF /* SystemConfiguration.framework in Frameworks */,
+				525331A41DF4451600614FFF /* Bolts.framework in Frameworks */,
+				525331971DF444BF00614FFF /* StoreKit.framework in Frameworks */,
+				525331A81DF4451600614FFF /* ParseTwitterUtils.framework in Frameworks */,
+				525331951DF444B800614FFF /* Security.framework in Frameworks */,
+				525331A51DF4451600614FFF /* Parse.framework in Frameworks */,
+				525331A91DF4451600614FFF /* ParseUI.framework in Frameworks */,
+				525331931DF444AF00614FFF /* QuartzCore.framework in Frameworks */,
+				525331911DF444A900614FFF /* CoreLocation.framework in Frameworks */,
+				5253318F1DF444A500614FFF /* CoreGraphics.framework in Frameworks */,
+				5253318D1DF4449B00614FFF /* CFNetwork.framework in Frameworks */,
+				5253318B1DF4449500614FFF /* AudioToolbox.framework in Frameworks */,
+				257C116A1F19614803552EF1 /* Pods_STUGUIN_Prototype.framework in Frameworks */,
+				525331A71DF4451600614FFF /* ParseFacebookUtilsV4.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +142,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				123B642B1B206DA124414117 /* Pods_STUGUIN_PrototypeTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,12 +150,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C06381C021088D8DA8556E1 /* Pods_STUGUIN_PrototypeUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		36D85353E0360650B3E05A30 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D6DED25EBE731A1D583B555E /* Pods-STUGUIN_Prototype.debug.xcconfig */,
+				EA27B262264498534D8603B7 /* Pods-STUGUIN_Prototype.release.xcconfig */,
+				B64AD4E289DB54589A0A39E9 /* Pods-STUGUIN_PrototypeTests.debug.xcconfig */,
+				0D58A64CDC15F1BCECE62D58 /* Pods-STUGUIN_PrototypeTests.release.xcconfig */,
+				A1BB7B0C2A3A6A2F1F79D70C /* Pods-STUGUIN_PrototypeUITests.debug.xcconfig */,
+				A83326E049BF590CF116226C /* Pods-STUGUIN_PrototypeUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		52411DC51DE465F400B0AF6E = {
 			isa = PBXGroup;
 			children = (
@@ -99,6 +177,8 @@
 				52411DE51DE465F500B0AF6E /* STUGUIN_PrototypeTests */,
 				52411DF01DE465F500B0AF6E /* STUGUIN_PrototypeUITests */,
 				52411DCF1DE465F400B0AF6E /* Products */,
+				36D85353E0360650B3E05A30 /* Pods */,
+				811A651492385896660EDCB2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -131,6 +211,13 @@
 				529B1B671DE9D103009119BF /* DeviceLockStatus.m */,
 				529B1B651DE9D103009119BF /* STUGUIN_Prototype-Bridging-Header.h */,
 				529B1B691DEB04C5009119BF /* DeviceStatus.swift */,
+				5253319E1DF4451600614FFF /* Bolts.framework */,
+				5253319F1DF4451600614FFF /* Parse.framework */,
+				525331A01DF4451600614FFF /* ParseFacebookUtils.framework */,
+				525331A11DF4451600614FFF /* ParseFacebookUtilsV4.framework */,
+				525331A21DF4451600614FFF /* ParseTwitterUtils.framework */,
+				525331A31DF4451600614FFF /* ParseUI.framework */,
+				525331AA1DF4454100614FFF /* parse-library-1.12.0 */,
 			);
 			path = STUGUIN_Prototype;
 			sourceTree = "<group>";
@@ -153,6 +240,26 @@
 			path = STUGUIN_PrototypeUITests;
 			sourceTree = "<group>";
 		};
+		811A651492385896660EDCB2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5253319C1DF444D400614FFF /* libsqlite3.tbd */,
+				5253319A1DF444CC00614FFF /* libz.tbd */,
+				525331981DF444C500614FFF /* SystemConfiguration.framework */,
+				525331961DF444BF00614FFF /* StoreKit.framework */,
+				525331941DF444B800614FFF /* Security.framework */,
+				525331921DF444AF00614FFF /* QuartzCore.framework */,
+				525331901DF444A900614FFF /* CoreLocation.framework */,
+				5253318E1DF444A500614FFF /* CoreGraphics.framework */,
+				5253318C1DF4449B00614FFF /* CFNetwork.framework */,
+				5253318A1DF4449500614FFF /* AudioToolbox.framework */,
+				E19D57310409BE987ED643D5 /* Pods_STUGUIN_Prototype.framework */,
+				953C142B3A4DD407297A26E2 /* Pods_STUGUIN_PrototypeTests.framework */,
+				2EF3CB52E7140E0F67C87E17 /* Pods_STUGUIN_PrototypeUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -160,9 +267,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 52411DF61DE465F500B0AF6E /* Build configuration list for PBXNativeTarget "STUGUIN_Prototype" */;
 			buildPhases = (
+				4050BFA373DA278706003B3D /* [CP] Check Pods Manifest.lock */,
 				52411DCA1DE465F400B0AF6E /* Sources */,
 				52411DCB1DE465F400B0AF6E /* Frameworks */,
 				52411DCC1DE465F400B0AF6E /* Resources */,
+				A58065E5BF1C47AD9C2AC509 /* [CP] Embed Pods Frameworks */,
+				BD5586AE4CEE0E0FF023BD60 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -177,9 +287,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 52411DF91DE465F500B0AF6E /* Build configuration list for PBXNativeTarget "STUGUIN_PrototypeTests" */;
 			buildPhases = (
+				F5086C63C43265C5974374A9 /* [CP] Check Pods Manifest.lock */,
 				52411DDE1DE465F500B0AF6E /* Sources */,
 				52411DDF1DE465F500B0AF6E /* Frameworks */,
 				52411DE01DE465F500B0AF6E /* Resources */,
+				0EB47CD8FEAA35F27B378400 /* [CP] Embed Pods Frameworks */,
+				2647344EA9E66FED055413F2 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -195,9 +308,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 52411DFC1DE465F500B0AF6E /* Build configuration list for PBXNativeTarget "STUGUIN_PrototypeUITests" */;
 			buildPhases = (
+				FF52812B4227E7490A90BD10 /* [CP] Check Pods Manifest.lock */,
 				52411DE91DE465F500B0AF6E /* Sources */,
 				52411DEA1DE465F500B0AF6E /* Frameworks */,
 				52411DEB1DE465F500B0AF6E /* Resources */,
+				DFBC861E4CBB12958D9ED08C /* [CP] Embed Pods Frameworks */,
+				C36C02E0C67E3BBEF139B2C7 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -267,6 +383,7 @@
 				52411E041DE4917F00B0AF6E /* StudyViewController.xib in Resources */,
 				523E882F1DE6BAF600F4E3AC /* FinishViewController.xib in Resources */,
 				525331871DF43F0500614FFF /* LoginViewController.xib in Resources */,
+				525331AB1DF4454100614FFF /* parse-library-1.12.0 in Resources */,
 				52411DDC1DE465F400B0AF6E /* LaunchScreen.storyboard in Resources */,
 				52411DD91DE465F400B0AF6E /* Assets.xcassets in Resources */,
 				52411DD71DE465F400B0AF6E /* Main.storyboard in Resources */,
@@ -288,6 +405,144 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0EB47CD8FEAA35F27B378400 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-STUGUIN_PrototypeTests/Pods-STUGUIN_PrototypeTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2647344EA9E66FED055413F2 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-STUGUIN_PrototypeTests/Pods-STUGUIN_PrototypeTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4050BFA373DA278706003B3D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A58065E5BF1C47AD9C2AC509 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-STUGUIN_Prototype/Pods-STUGUIN_Prototype-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BD5586AE4CEE0E0FF023BD60 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-STUGUIN_Prototype/Pods-STUGUIN_Prototype-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C36C02E0C67E3BBEF139B2C7 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-STUGUIN_PrototypeUITests/Pods-STUGUIN_PrototypeUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DFBC861E4CBB12958D9ED08C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-STUGUIN_PrototypeUITests/Pods-STUGUIN_PrototypeUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F5086C63C43265C5974374A9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		FF52812B4227E7490A90BD10 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		52411DCA1DE465F400B0AF6E /* Sources */ = {
@@ -450,10 +705,15 @@
 		};
 		52411DF71DE465F500B0AF6E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D6DED25EBE731A1D583B555E /* Pods-STUGUIN_Prototype.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = U6JP7S27NV;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/STUGUIN_Prototype/parse-library-1.12.0",
+				);
 				INFOPLIST_FILE = STUGUIN_Prototype/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.shiba.STUGUIN-Prototype";
@@ -466,10 +726,15 @@
 		};
 		52411DF81DE465F500B0AF6E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EA27B262264498534D8603B7 /* Pods-STUGUIN_Prototype.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = U6JP7S27NV;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/STUGUIN_Prototype/parse-library-1.12.0",
+				);
 				INFOPLIST_FILE = STUGUIN_Prototype/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.shiba.STUGUIN-Prototype";
@@ -481,6 +746,7 @@
 		};
 		52411DFA1DE465F500B0AF6E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B64AD4E289DB54589A0A39E9 /* Pods-STUGUIN_PrototypeTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -496,6 +762,7 @@
 		};
 		52411DFB1DE465F500B0AF6E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0D58A64CDC15F1BCECE62D58 /* Pods-STUGUIN_PrototypeTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -511,6 +778,7 @@
 		};
 		52411DFD1DE465F500B0AF6E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A1BB7B0C2A3A6A2F1F79D70C /* Pods-STUGUIN_PrototypeUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = U6JP7S27NV;
@@ -525,6 +793,7 @@
 		};
 		52411DFE1DE465F500B0AF6E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A83326E049BF590CF116226C /* Pods-STUGUIN_PrototypeUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = U6JP7S27NV;

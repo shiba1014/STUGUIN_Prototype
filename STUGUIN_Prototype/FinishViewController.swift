@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 class FinishViewController: UIViewController {
     
@@ -20,13 +21,14 @@ class FinishViewController: UIViewController {
     public var studyTime: Int = 0
     public var isSuccess: Bool = true
     public var roomInfo: Dictionary<String, Any> = [:]
-    var username: String = "shiba"
+    public var username: String = ""
+    public var friendName: String = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        friendNameLabel.text = roomInfo["hostUser"] as? String
+        friendNameLabel.text = friendName
         usernameLabel.text = username
         let second = studyTime % 60
         let minute = (studyTime / 60) % 60
@@ -46,11 +48,36 @@ class FinishViewController: UIViewController {
     }
     
     @IBAction func pushedOk() {
+        saveToParse()
+        removeRoomFromParse()
         self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func pushedTweet() {
+    func saveToParse() {
+        let object = PFObject(className: "StudyRecordObject")
+        object["user"] = PFUser.current()!
+        object["subject"] = "数学"
+        object["content"] = "予習"
+        object["studyTime"] = studyTime
+        let today = Date()
+        object["studyDate"] = today
+        let df = DateFormatter()
+        df.locale = Locale(identifier: "ja_JP")
+        df.dateFormat = "yyyy/MM/dd"
+        object["studyDateStr"] = df.string(from: today)
+        df.dateFormat = "yyyy/MM"
+        object["studyMonthStr"] = df.string(from: today)
+        df.dateFormat = "yyyy/MM-W"
+        object["studyWeekStr"] = df.string(from: today)
+        object.saveInBackground()
+    }
     
+    func removeRoomFromParse() {
+        let query = PFQuery(className: "RoomObject")
+        query.whereKey("hostUsername", equalTo: roomInfo["hostUsername"] as! String)
+        query.getFirstObjectInBackground { (object, error) in
+            object?.deleteInBackground()
+        }
     }
     
 

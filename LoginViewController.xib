@@ -12,6 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModule="STUGUIN_Prototype" customModuleProvider="target">
             <connections>
                 <outlet property="addressTextField" destination="Vbo-5w-w7r" id="6wI-sQ-GB0"/>
+                <outlet property="indicator" destination="Mbc-bi-Vjd" id="30b-hP-ZYN"/>
                 <outlet property="passwordTextField" destination="gxI-Vp-dCA" id="EgX-sv-v5M"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -52,15 +53,20 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Mbc-bi-Vjd">
+                    <rect key="frame" x="177" y="323" width="20" height="20"/>
+                </activityIndicatorView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="dVh-fM-Aqx" firstAttribute="top" secondItem="rja-7E-9p3" secondAttribute="bottom" constant="50" id="794-GK-F7T"/>
                 <constraint firstItem="D2B-65-rmh" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="7Vo-8S-EDs"/>
+                <constraint firstItem="Mbc-bi-Vjd" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="9d9-sA-FRg"/>
                 <constraint firstItem="rja-7E-9p3" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="IaR-ch-z8c"/>
                 <constraint firstItem="gxI-Vp-dCA" firstAttribute="leading" secondItem="Vbo-5w-w7r" secondAttribute="leading" id="JeV-tR-lF4"/>
                 <constraint firstItem="gxI-Vp-dCA" firstAttribute="centerY" secondItem="dVh-fM-Aqx" secondAttribute="centerY" id="Nue-Kb-gYU"/>
                 <constraint firstItem="dVh-fM-Aqx" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="Tpg-KE-osv"/>
+                <constraint firstItem="Mbc-bi-Vjd" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="VPt-dU-8Rw"/>
                 <constraint firstAttribute="trailing" secondItem="Vbo-5w-w7r" secondAttribute="trailing" constant="16" id="aAD-Qj-2v7"/>
                 <constraint firstItem="Vbo-5w-w7r" firstAttribute="centerY" secondItem="rja-7E-9p3" secondAttribute="centerY" id="gNi-94-K2c"/>
                 <constraint firstItem="rja-7E-9p3" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="150" id="gsV-Dl-xL4"/>

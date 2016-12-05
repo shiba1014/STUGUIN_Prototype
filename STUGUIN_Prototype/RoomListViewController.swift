@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import Parse
 
 class RoomListViewController: UITableViewController {
     
     var roomArray: [Dictionary<String, Any>] = []
     let waitingView: UIView = UIView()
-    var username: String = "shiba"
+    var username: String = ""
+    var timer: Timer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,21 +25,50 @@ class RoomListViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
-        let room1: Dictionary<String, Any> = ["hostUser" : "Fumi Nikaido",
-                                              "targetMinutes" : 1,
-                                              "status" : "empty"]
+        if PFUser.current() == nil {
+            let loginVC = LoginViewController()
+            self.present(loginVC, animated: true, completion: nil)
+            return
+        }
         
-        let room2: Dictionary<String, Any> = ["hostUser" : "Sho Sakurai",
-                                              "targetMinutes" : 60,
-                                              "status" : "full"]
+        let query = PFQuery(className: "RoomObject")
+        query.findObjectsInBackground { (objects, error) in
+            if error == nil {
+                for object:PFObject in objects! {
+                    var room: Dictionary<String, Any> = [:]
+                    room["hostUsername"] = object["hostUsername"]
+                    room["targetMinutes"] = object["targetMinutes"]
+                    room["isEmpty"] = object["isEmpty"]
+                    self.roomArray.append(room)
+                }
+                self.tableView.reloadData()
+            }
+        }
         
-        let room3: Dictionary<String, Any> = ["hostUser" : "Go Ayano",
-                                              "targetMinutes" : 60,
-                                              "status" : "empty"]
+        let usernameQuery = PFQuery(className: "UserInfomationObject")
+        let user = PFUser.current()
+        usernameQuery.whereKey("user", equalTo: user!)
+        usernameQuery.getFirstObjectInBackground { (object, error) in
+            if error == nil {
+                self.username = object?["usernameForUser"] as! String
+            }
+        }
         
-        roomArray.append(room1)
-        roomArray.append(room2)
-        roomArray.append(room3)
+//        let room1: Dictionary<String, Any> = ["hostUser" : "Fumi Nikaido",
+//                                              "targetMinutes" : 1,
+//                                              "status" : "empty"]
+//        
+//        let room2: Dictionary<String, Any> = ["hostUser" : "Sho Sakurai",
+//                                              "targetMinutes" : 60,
+//                                              "status" : "full"]
+//        
+//        let room3: Dictionary<String, Any> = ["hostUser" : "Go Ayano",
+//                                              "targetMinutes" : 60,
+//                                              "status" : "empty"]
+//        
+//        roomArray.append(room1)
+//        roomArray.append(room2)
+//        roomArray.append(room3)
     }
     
     override func didReceiveMemoryWarning() {
@@ -62,13 +93,14 @@ class RoomListViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         
         let roomInfo: Dictionary = roomArray[indexPath.row]
-        let username: String = roomInfo["hostUser"] as! String
-        let targetMinutes: Int = roomInfo["targetMinutes"] as! Int
-        let status: String = roomInfo["status"] as! String
+        let friendName: String = roomInfo["hostUsername"] as! String
+        let targetMinutes:Int = roomInfo["targetMinutes"] as! Int
+        let isEmpty: Bool = roomInfo["isEmpty"] as! Bool
+
         
-        cell.textLabel?.text = "Room\(indexPath.row + 1) -> \(username) \(targetMinutes) min"
+        cell.textLabel?.text = "Room\(indexPath.row + 1) -> \(friendName) \(targetMinutes) min"
         
-        if(status == "full"){
+        if(!isEmpty){
             cell.backgroundColor = UIColor.red
             cell.textLabel?.textColor = UIColor.white
         }
@@ -85,30 +117,40 @@ class RoomListViewController: UITableViewController {
         tableView.deselectRow(at: indexPath, animated: true)
         
         var roomInfo: Dictionary = roomArray[indexPath.row]
-        let username: String = roomInfo["hostUser"] as! String
+        let friendName: String = roomInfo["hostUsername"] as! String
         let targetMinutes:Int = roomInfo["targetMinutes"] as! Int
-        let status: String = roomInfo["status"] as! String
+        let isEmpty: Bool = roomInfo["isEmpty"] as! Bool
         
-        if(status == "full"){
+        if(!isEmpty){
             let alert = UIAlertController(title: nil, message: "このルームは埋まっています", preferredStyle: .alert)
             let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
             alert.addAction(okAction)
             self.present(alert, animated: true, completion: nil)
+            return
         }
         
-        let alert = UIAlertController(title: nil, message: "\(username)さんと\(targetMinutes)分の勉強を始めますか？", preferredStyle: .alert)
+        let alert = UIAlertController(title: nil, message: "\(friendName)さんと\(targetMinutes)分の勉強を始めますか？", preferredStyle: .alert)
         let okAction = UIAlertAction(title: "はい", style: .default, handler: {
             (action:UIAlertAction!) -> Void in
             print("OK")
             
             let studyVC = StudyViewController.sharedInstance
             studyVC.roomInfo = roomInfo
+            studyVC.username = self.username
+            studyVC.friendName = friendName
             self.present(studyVC, animated: true, completion: nil)
             
-            roomInfo["status"] = "full"
-            self.roomArray[indexPath.row] = roomInfo
-            
-            
+            roomInfo["isEmpty"] = false
+            let query = PFQuery(className: "RoomObject")
+            query.whereKey("hostUsername", equalTo: friendName)
+            query.getFirstObjectInBackground(block: { (object, error) in
+                object?["isEmpty"] = false
+                object?["isSuccess"] = true
+                object?["guestUsername"] = self.username
+                object?.saveInBackground()
+            })
+            self.roomArray.remove(at: indexPath.row)
+            self.tableView.reloadData()
         })
         let cancelAction = UIAlertAction(title: "いいえ", style: .cancel, handler: nil)
         alert.addAction(okAction)
@@ -133,9 +175,15 @@ class RoomListViewController: UITableViewController {
                                                             if textFields != nil {
                                                                 let textField = textFields?[0]
                                                                 var roomInfo: Dictionary<String, Any> = [:]
-                                                                roomInfo["hostUser"] = self.username
+                                                                roomInfo["hostUsername"] = self.username
                                                                 roomInfo["targetMinutes"] = Int((textField?.text)!)
-                                                                roomInfo["status"] = "empty"
+                                                                roomInfo["isEmpty"] = true
+                                                                
+                                                                let object = PFObject(className: "RoomObject")
+                                                                object["hostUsername"] = self.username
+                                                                object["targetMinutes"] = Int((textField?.text)!)
+                                                                object["isEmpty"] = true
+                                                                object.saveInBackground()
                                                                 self.roomArray.append(roomInfo)
                                                                 self.tableView.reloadData()
                                                                 self.createWaitingView()
@@ -154,70 +202,80 @@ class RoomListViewController: UITableViewController {
     func createWaitingView() {
         waitingView.frame = CGRect(x: 0, y: 0, width: self.view.bounds.size.width, height: self.view.bounds.size.height)
         waitingView.backgroundColor = UIColor.orange
-//        view.translatesAutoresizingMaskIntoConstraints = false
         self.navigationController?.view.addSubview(waitingView)
         let statusLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 100, height: 30))
         statusLabel.text = "Waiting..."
         statusLabel.textColor = UIColor.white
         statusLabel.center = waitingView.center
-//        statusLabel.translatesAutoresizingMaskIntoConstraints = true
-//        statusLabel.addConstraints([NSLayoutConstraint(item: statusLabel,
-//                                                      attribute: .centerX,
-//                                                      relatedBy: .equal,
-//                                                      toItem: view,
-//                                                      attribute: .centerX,
-//                                                      multiplier: 1.0,
-//                                                      constant: 0.0),
-//                                   
-//                                   NSLayoutConstraint(item: statusLabel,
-//                                                      attribute: .centerY,
-//                                                      relatedBy: .equal,
-//                                                      toItem: view,
-//                                                      attribute: .centerY,
-//                                                      multiplier: 1.0,
-//                                                      constant: 0.0)]
-//        )
-        
         waitingView.addSubview(statusLabel)
         
         let cancelButton = UIButton(frame: CGRect(x: 0, y: 0, width: 150, height: 40))
         cancelButton.setTitle("Delete Room", for: .normal)
         cancelButton.center = CGPoint(x: waitingView.center.x, y: waitingView.center.y + 50)
         cancelButton.addTarget(self, action: #selector(RoomListViewController.deleteView), for: .touchUpInside)
-//        cancelButton.translatesAutoresizingMaskIntoConstraints = true
-//        cancelButton.addConstraints([
-//            NSLayoutConstraint(item: cancelButton,
-//                               attribute: .top,
-//                               relatedBy: .equal,
-//                               toItem: statusLabel,
-//                               attribute: .bottom,
-//                               multiplier: 1.0,
-//                               constant: 8.0),
-//            
-//            NSLayoutConstraint(item: cancelButton,
-//                               attribute: .centerX,
-//                               relatedBy: .equal,
-//                               toItem: statusLabel,
-//                               attribute: .centerX,
-//                               multiplier: 1.0,
-//                               constant: 0.0)
-//            ])
         waitingView.addSubview(cancelButton)
         
+        timer = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(RoomListViewController.checkParse), userInfo: nil, repeats: true)
+        timer.fire()
     }
     
     func deleteView() {
+        timer.invalidate()
         waitingView.removeFromSuperview()
         for i in 0..<roomArray.count {
             let roomInfo = roomArray[i]
-            let hostUser: String = roomInfo["hostUser"] as! String
+            let hostUser: String = roomInfo["hostUsername"] as! String
             if(hostUser == username){
                 roomArray.remove(at: i)
                 self.tableView.reloadData()
                 break
             }
+            
+            let query = PFQuery(className: "RoomObject")
+            query.whereKey("hostUsername", equalTo: username)
+            query.getFirstObjectInBackground(block: { (object, error) in
+                if error == nil {
+                    object?.deleteInBackground()
+                }
+            })
         }
     }
+    
+
+    
+    func checkParse() {
+        print("check")
+        let query = PFQuery(className: "RoomObject")
+        query.whereKey("hostUsername", equalTo: username)
+        do{
+            let object = try query.getFirstObject()
+            if object["isEmpty"] as! Bool == false {
+                let studyVC = StudyViewController.sharedInstance
+                var roomInfo: Dictionary<String, Any> = [:]
+                roomInfo["hostUsername"] = object["hostUsername"]
+                roomInfo["targetMinutes"] = object["targetMinutes"]
+                roomInfo["isEmpty"] = object["isEmpty"]
+                studyVC.roomInfo = roomInfo
+                studyVC.username = self.username
+                studyVC.friendName = object["guestUsername"] as! String
+                self.present(studyVC, animated: true, completion: nil)
+                timer.invalidate()
+                waitingView.removeFromSuperview()
+                for i in 0..<roomArray.count {
+                    let roomInfo = roomArray[i]
+                    let hostUser: String = roomInfo["hostUsername"] as! String
+                    if(hostUser == username){
+                        roomArray.remove(at: i)
+                        self.tableView.reloadData()
+                        break
+                    }
+                }
+            }
+        } catch {
+            print("no result")
+        }
+    }
+
     /*
      // Override to support conditional editing of the table view.
      override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

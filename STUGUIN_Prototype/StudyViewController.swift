@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 class StudyViewController: UIViewController {
     
@@ -16,10 +17,11 @@ class StudyViewController: UIViewController {
     @IBOutlet var friendImageView: UIImageView!
     @IBOutlet var timeLabel: UILabel!
     var time: Int = 0
-    var username: String = "shiba"
     var isStudying:Bool = false
     var isLocked: Bool = false
-    
+    var timer: Timer!
+    public var username: String = ""
+    public var friendName: String = ""
     public var roomInfo: Dictionary<String, Any> = [:]
     
     class var sharedInstance: StudyViewController {
@@ -37,7 +39,7 @@ class StudyViewController: UIViewController {
         isStudying = true
         
         usernameLabel.text = username
-        friendNameLabel.text = roomInfo["hostUser"] as? String
+        friendNameLabel.text = friendName
         
         let targetMinutes:Int = roomInfo["targetMinutes"] as! Int
         time = targetMinutes * 60
@@ -51,6 +53,13 @@ class StudyViewController: UIViewController {
                              selector: #selector(countUp),
                              userInfo: nil,
                              repeats: true)
+        
+        timer = Timer.scheduledTimer(timeInterval: 3.0,
+                                     target: self,
+                                     selector: #selector(RoomListViewController.checkParse),
+                                     userInfo: nil,
+                                     repeats: true)
+        timer.fire()
         
         let deviceStatus = DeviceLockStatus()
         deviceStatus.registerAppForDetectLockState()
@@ -71,6 +80,7 @@ class StudyViewController: UIViewController {
     
     public func finish() {
         isStudying = false
+        timer.invalidate()
         let finishVC = FinishViewController()
         finishVC.roomInfo = roomInfo
         let studyTime: Int = (roomInfo["targetMinutes"] as? Int)!
@@ -79,7 +89,15 @@ class StudyViewController: UIViewController {
             finishVC.isSuccess = true
         } else {
             finishVC.isSuccess = false
+            let query = PFQuery(className: "RoomObject")
+            query.whereKey("hostUsername", equalTo: roomInfo["hostUsername"] as! String)
+            query.getFirstObjectInBackground(block: { (object, error) in
+                object?["isSuccess"] = false
+                object?.saveInBackground()
+            })
         }
+        finishVC.username = username
+        finishVC.friendName = friendName
         self.present(finishVC, animated: true, completion: nil)
     }
     
@@ -89,12 +107,21 @@ class StudyViewController: UIViewController {
             print("isLocked == \(isLocked)")
         }
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
+    func checkParse() {
+        let query = PFQuery(className: "RoomObject")
+        query.whereKey("hostUsername", equalTo: roomInfo["hostUsername"] as! String)
+        query.getFirstObjectInBackground(block: { (object, error) in
+            if object?["isSuccess"] as! Bool == false {
+                self.finish()
+            }
+        })
+    }
     /*
     // MARK: - Navigation
 
